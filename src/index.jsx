@@ -43,7 +43,11 @@ const main = async () => {
     return
   }
 
+  exec('git', ['remote', '-v'])
+  exec('get', ['status'])
   exec('git', ['commit', '-m', "Repo visualizer: updated diagram"])
+  exec('get', ['status'])
+  exec('cat', ['diagram.svg'])
   await exec('git', ['push'])
 
   console.log("All set!")
